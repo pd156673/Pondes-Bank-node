@@ -30,3 +30,4 @@ app.listen(PORT, HOST);
 // Die werte der Beiden Konstanten HOST un PORT werden den Ausdruck übergeben. 
 // Ein wert mit anschließenden Klammern steht immer für eine Anweisung etwas zu tun. 
 console.log(`Running on http://${HOST}:${PORT}`);
+require('./uebungen/01-grundlagen')
