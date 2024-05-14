@@ -81,3 +81,12 @@ console.log('endkapitalNachZweiJahren');
 
 console.log('Aufgabe 8');
 console.log('In aufgabe 7 wurde die Anweisung endkapital = ... mehrfach wiederholt. Um sich tipparbeit zu sparen und die Wiederholung der Anweisung in der gewünschten H');
+
+console.log('Aufgabe 9');
+console.log('Wenn der Artikel Lebensmittel ist, dann ist die MwSt 7%, ansonsten 19%');
+console.log('IN Excel würde das dann so aussehen =Wenn(A1=Lebensmittel;7;19');
+
+let Artikel = 'Lebensmittel';
+let MwStSatz = (Artikel === "Lebensmittel") ? 7:19;
+
+console.log('der MwSt satz für den Artikel' + Artikel + ' beträgt: ' + MwStSatz +'%');
