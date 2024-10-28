@@ -32,4 +32,5 @@ app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
 // require('./uebungen/01-grundlagen')
 // require('./uebungen/02-booleans')
-require('./uebungen/03-objekte')
+// require('./uebungen/03-objekte')
+require('./Klausuren/Test20240930')
