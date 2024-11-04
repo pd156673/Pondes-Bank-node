@@ -33,4 +33,5 @@ console.log(`Running on http://${HOST}:${PORT}`);
 // require('./uebungen/01-grundlagen')
 // require('./uebungen/02-booleans')
 // require('./uebungen/03-objekte')
-require('./Klausuren/Test20240930')
+// require('./Klausuren/Test20240930')
+require('./uebungen/04-funktionen')
