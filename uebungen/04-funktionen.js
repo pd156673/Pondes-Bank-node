@@ -1,98 +1,81 @@
 console.log("FUNKTIONEN")
 console.log("==========")
 
-// Funktionen führen Operationen aus
+// Funktionen führen Operationen aus.
 
-let länge = 3
+let laenge = 3
 let breite = 5
 
-let flaecheninhalt = länge * breite
-console.log("Hier wie vorher berechnet:")
-console.log("Flächeninhalt:" + flaecheninhalt)
+let flaecheninhalt = laenge * breite
 
-// Jetzt die berechnung in einer Funktion:
+console.log("Flächeninhalt: " + flaecheninhalt)
+
+// Jetzt die Berechnung in einer Funktion:
 
 // Zuerst wird die Funktion erstellt:
 
-function berechneFlaecheninhalt (breite, länge){
-    return länge * breite
+function berechneFlaecheninhalt(laenge, breite){
+    return laenge * breite
 }
 
-// in einem 2. Schritt wird die Funktion aufgerufen:
-console.log("Hier mit funktion berechnet:")
-console.log("Flächeninhalt:" + berechneFlaecheninhalt(10,10))
+// In einem zweiten Schritt wird die Funktion aufgerufen:
 
-// Der Vorteil von funktionen ist,l dass die Berechnung im Rumpf nur einmal ausformuliert werden muss.
-// Die Funktion kann dann an vielen Stellen aufgerufen werden
+console.log("Flächeninhalt: " + berechneFlaecheninhalt(10,10))
+
+// Der Vorteil von Funktionen ist, dass die Berechnung im Rumpf nur einmal ausformuliert werden muss.
+// Die Funktion kann dann an vielen Stellen aufgerufen werden.
 
 // So werden Funktionen erstellt:
 
-// 1. Das Reservierte Wort function 
-// 2. ein sprechender Name. D.h. der Name soll beschreiben, was die Funktion macht.
-// 3. Runde klammern am ende nehmen Parameter entgegen. Parameter sind das was die Funktion als input zur berechnung benötigt.
-//    Funktionen können mehrere oder auch keinen Parameter entgegen nehmen.
-// 4. In den geschweiften klammern wird die logik ausprogrammiert
-// 5. Mit dem reservierten Wort return wird das ergebnis zurückgegeben.
-console.log("----------")
-console.log("Aufgabe 1:")
-// Berechne das Volumen eines Quaders mit einer Funktion
+// 1. Das reservierte Wort function 
+// 2. Ein sprechender Name. D.h., der Name soll beschreiben, was die Funktion macht.
+// 3. Runde Klammern am Ende nehmen Parameter entgegen. Parameter sind das was die Funktion als
+//    Input zur Berechnung benötigt. Funktinen können mehrere oder auch keinen Parameter entgegennehmen
+// 4. In den geschweiften Klammern wird die Logik ausprogrammiert.
+// 5. Mit dem reservierten Wort return wird das Ergebnis zurückgegeben.
 
-function berechneVolumen (laenge, breite, hoehe){
+console.log("Aufgabe 1")
+console.log("---------")
+// Berechne das Volumen eines Quaders mit einer Funktion:
+
+function berechneVolumen(laenge,breite,hoehe){
     return laenge * breite * hoehe
 }
 
-console.log("Volumen:" + berechneVolumen(5,6,7))
-console.log("----------")
-console.log("Aufgabe 2:")
-// Berechne den Bruttopreis aus dem Nettopreis
+console.log("Volumen: " + berechneVolumen(5,6,7))
 
-function berechneBruttoausNetto (Nettopreis, Mehrwertsteuersatz){
-    return Nettopreis * Mehrwertsteuersatz
+console.log("Aufgabe 2")
+console.log("---------")
+// Berechne den Bruttopreis aus dem Nettopreis:
+
+function berechneBruttopreis(nettopreis, mehrwertsteuersatz){
+    return nettopreis + mehrwertsteuersatz * nettopreis
 }
 
-console.log("Bruttopreis:" + berechneBruttoausNetto(100,1.19))
-console.log("----------")
-console.log("Aufgabe 3:")
-// Berechne die Schulnote aus der Abitur - Punktzahl.
-function berechneNote(punktzahl) {
-    let note;
+console.log("Bruttopreis: " + berechneBruttopreis(100,0.19))
 
-    if (punktzahl <= 15) {
-        note = 1.0;
-    } else if (punktzahl <= 25) {
-        note = 1.3;
-    } else if (punktzahl <= 35) {
-        note = 1.7;
-    } else if (punktzahl <= 45) {
-        note = 2.0;
-    } else if (punktzahl <= 55) {
-        note = 2.3;
-    } else if (punktzahl <= 65) {
-        note = 2.7;
-    } else if (punktzahl <= 75) {
-        note = 3.0;
-    } else if (punktzahl <= 85) {
-        note = 3.3;
-    } else if (punktzahl <= 95) {
-        note = 3.7;
-    } else if (punktzahl <= 105) {
-        note = 4.0;
-    } else if (punktzahl <= 115) {
-        note = 4.3;
-    } else if (punktzahl <= 125) {
-        note = 4.7;
-    } else {
-        note = 5.0;
-    }
+console.log("Aufgabe 3")
+console.log("---------")
+// Berechne die Schulnote aus der Abitur-Punktzahl.
 
-    return note;
+function punkteZuNote(punkte){
+    if(punkte === 15) return "1+"
+    else if(punkte === 14) return "1"
+    else if(punkte === 13) return "1-"
+    else if(punkte === 12) return "2+"
+    else if(punkte === 11) return "2"
+    else if(punkte === 10) return "2-"    
+    
 }
 
+let punkte = 10;
 
-console.log("Note für die Punktzahl 10: " + berechneNote(10))
-console.log("----------")
+let note = punkteZuNote(10)
 
-console.log("Aufgabe 4:")
+console.log("Note: " + note)
+
+console.log("Aufgabe 4")
+console.log("---------")
 
 // Funktionen können auch innerhalb von Klassen definiert werden.
 // Beispiel: Kredit
@@ -100,17 +83,18 @@ console.log("Aufgabe 4:")
 class Kredit{
     constructor(){
         this.Laufzeit
-        this.Zinssatz
         this.Betrag
+        this.Zinssatz
     }
-    berechneGesamtkostenamEndederLaufzeit(){
-        return this.Betrag + this.Betrag * this.Zinssatz
+
+    berechneGesamtkostenAmEndeDerLaufzeit(){
+        return this.Betrag * Math.pow((1 + this.Zinssatz), this.Laufzeit)
     }
 }
 
-let kredt = new Kredit
+let kredit = new Kredit()
 kredit.Betrag = 100
 kredit.Laufzeit = 2
-kredit.Zinssatz = 0,1
+kredit.Zinssatz = 0.1
 
-console.log("Gesamtkosten:" + kredit.berechneGesamtkostenamEndederLaufzeit())
+console.log("Gesamtkosten: " + kredit.berechneGesamtkostenAmEndeDerLaufzeit())
